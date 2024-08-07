@@ -10,7 +10,7 @@ podman exec -ti <container> bash
 
 Inside bash prompt:
 ```
-mysql -u root -p
+mysql -u root -p  # MYSQL_ROOT_PASSWORD=password
 ```
 
 Inside mysql shell:
