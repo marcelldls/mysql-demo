@@ -44,6 +44,9 @@ INSERT into Orders values (1,2234);
 INSERT into Orders values (2,2789);
 SHOW TABLES;  -- Displays table names
 
+```
 
-
+To run a script:
+```
+mysql --user="username" --database="databasename" -p <filepath>
 ```
