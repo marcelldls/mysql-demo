@@ -44,6 +44,8 @@ INSERT into Orders values (1,2234);
 INSERT into Orders values (2,2789);
 SHOW TABLES;  -- Displays table names
 
+SELECT * FROM Persons
+WHERE FirstName = 'Tom';
 ```
 
 To run a script:
