@@ -16,15 +16,17 @@ mysql -u root -p  # MYSQL_ROOT_PASSWORD=password
 Inside mysql shell:
 ```
 CREATE DATABASE database_name;
-
+SHOW DATABASES;
 USE database_name;
 
 CREATE TABLE Persons (
-    PersonID int,
+    PersonID int NOT NULL,
     LastName varchar(255),
     FirstName varchar(255),
-    Address varchar(255)
+    Address varchar(255),
+    PRIMARY KEY (PersonID)  -- UNIQUE, no NULL
 );
+SHOW TABLES;
 
 INSERT into Persons values (1,'Dave','Smith','2121');
 INSERT into Persons values (2,'Dave','Smith','2331');
