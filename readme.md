@@ -22,7 +22,7 @@ USE database_name;
 CREATE TABLE Persons (
     PersonID int NOT NULL,
     LastName varchar(255),
-    FirstName varchar(255),
+    FirstName varchar(255) DEFAULT 'John',
     Age int,
     PRIMARY KEY (PersonID) -- UNIQUE & no NULL, only one (multi column OK)
     CHECK (Age>=18)
@@ -35,6 +35,7 @@ SELECT * from Persons;  -- Displays table
 CREATE TABLE Orders (
     PersonID int NOT NULL,
     OrderNumber int,
+    OrderDate date DEFAULT CURRENT_DATE()
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID) -- Must be value from parent
     UNIQUE (OrderNumber)
 );
