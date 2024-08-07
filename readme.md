@@ -23,18 +23,20 @@ CREATE TABLE Persons (
     PersonID int NOT NULL,
     LastName varchar(255),
     FirstName varchar(255),
-    Address varchar(255),
+    Age int,
     PRIMARY KEY (PersonID) -- UNIQUE & no NULL, only one (multi column OK)
+    CHECK (Age>=18)
 );
-INSERT into Persons values (1,'Dave','Smith','2121');
-INSERT into Persons values (2,'Tom','Smith','2331');
-INSERT into Persons values (3,'John','Smith','2332');
+INSERT into Persons values (1,'Dave','Smith',19);
+INSERT into Persons values (2,'Tom','Smith',21);
+INSERT into Persons values (3,'John','Smith',21);
 SELECT * from Persons;  -- Displays table
 
 CREATE TABLE Orders (
     PersonID int NOT NULL,
     OrderNumber int,
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID) -- Must be value from parent
+    UNIQUE (OrderNumber)
 );
 INSERT into Orders values (1,2234);
 INSERT into Orders values (1,2234);
