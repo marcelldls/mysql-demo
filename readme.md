@@ -36,9 +36,9 @@ CREATE TABLE Orders (
     OrderNumber int,
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID) -- Must be value from parent
 );
-INSERT into Persons values (1,2234);
-INSERT into Persons values (1,2234);
-INSERT into Persons values (2,2789);
+INSERT into Orders values (1,2234);
+INSERT into Orders values (1,2234);
+INSERT into Orders values (2,2789);
 SHOW TABLES;  -- Displays table names
 
 
