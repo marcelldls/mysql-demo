@@ -24,13 +24,23 @@ CREATE TABLE Persons (
     LastName varchar(255),
     FirstName varchar(255),
     Address varchar(255),
-    PRIMARY KEY (PersonID)  -- UNIQUE, no NULL
+    PRIMARY KEY (PersonID) -- UNIQUE & no NULL, only one (multi column OK)
 );
-SHOW TABLES;
-
 INSERT into Persons values (1,'Dave','Smith','2121');
-INSERT into Persons values (2,'Dave','Smith','2331');
+INSERT into Persons values (2,'Tom','Smith','2331');
 INSERT into Persons values (3,'John','Smith','2332');
+SELECT * from Persons;  -- Displays table
 
-SELECT * from Persons;
+CREATE TABLE Orders (
+    PersonID int NOT NULL,
+    OrderNumber int,
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID) -- Must be value from parent
+);
+INSERT into Persons values (1,2234);
+INSERT into Persons values (1,2234);
+INSERT into Persons values (2,2789);
+SHOW TABLES;  -- Displays table names
+
+
+
 ```
